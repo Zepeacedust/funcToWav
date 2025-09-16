@@ -5,7 +5,7 @@ The function should take a variable t, which is entered in seconds.
 If the function contains spaces or any control characters, it is advised to enclose it with quotes, see example. 
 
 ## Example
-`python main.py example_out.txt "sin(440 * 2 * pi * t) 50000 10"`
+`python main.py example_out.txt "sin(440 * 2 * pi * t)" 50000 10`
 This creates 10 seconds of pure c4.
 
 ## Available functions
