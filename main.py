@@ -5,7 +5,7 @@ import random
 
 from math import sin, cos, log, tan, arctan, arccos, arcsin, pi, e
 
-SAMPLE_WIDTH = 2 # only 1 works right now, not quite sure why
+SAMPLE_WIDTH = 1 # only 1 works right now, not quite sure why
 
 # Go from list of numbers, to list of integers that can be interpreted as bytearray
 def prepareForWriting(points):
