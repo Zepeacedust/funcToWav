@@ -5,7 +5,7 @@ import random
 
 from math import sin, cos, log, tan, atan, acos, asin, pi, e
 
-SAMPLE_WIDTH = 1 # only 1 works right now, not quite sure why
+SAMPLE_WIDTH = 4 # only 1 works right now, not quite sure why
 
 # Go from list of numbers, to list of integers that can be interpreted as bytearray
 def prepareForWriting(points):
@@ -13,14 +13,9 @@ def prepareForWriting(points):
     minimum = min(points)
     maximum = max(points)
     for point in points:
-        #yield int((point+1)/2*255)
-        #continue
-        intermediate = (point - minimum)/(maximum-minimum) * 256**SAMPLE_WIDTH
-        #print(point, intermediate)
-        for i in range(SAMPLE_WIDTH, 0, -1):
-            temp = intermediate // (256 ** (i-1))
-            print(temp)
-            yield int(temp%256)
+        intermediate = ((point-minimum)/(maximum-minimum)-0.5) * (256**SAMPLE_WIDTH-1)
+        for inner in int(intermediate).to_bytes(SAMPLE_WIDTH, byteorder="little", signed=True):
+            yield inner
 
 def writePoints(points, sampleRate, destination):
     file = wave.open(destination, "w")
