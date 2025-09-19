@@ -3,7 +3,7 @@ import math
 import wave
 import random
 
-from math import sin, cos, log, tan, atan, acos, asin, pi, e
+from math import sin, cos, tan, asin, acos, atan, exp, log, pi, e
 
 SAMPLE_WIDTH = 4 # only 1 works right now, not quite sure why
 
